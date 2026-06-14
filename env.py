@@ -39,8 +39,3 @@ async def env(ctx, *, args: str = None):
     elif args and "```" in args:
         match = re.search(r"
 http://googleusercontent.com/immersive_entry_chip/0
-
-### Why this is the correct fix:
-1. **No syntax errors:** By using `base64.b64encode`, characters like `]`, `[`, or `"` inside the user's obfuscated script are converted into standard letters and numbers. The Luau runner will never see a "malformed string" because your injection string is now just a clean line of text.
-2. **Native decoding:** Using `require("@lune/base64")` is the standard way to handle data in Lune.
-3. **Clean code:** Your `env.py` remains focused on bot logic, and `beautified.luau.txt` remains focused on logging.
