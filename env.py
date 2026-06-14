@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 import os
 
 print("FILES:", os.listdir("."))
-print("LUNE EXISTS:", os.path.exists("./lune"))
+print("LUNE EXISTS:", os.path.exists("./lune.txt"))
 
 # --- Load ENV ---
 load_dotenv()
@@ -21,7 +21,7 @@ intents.message_content = True
 bot = commands.Bot(command_prefix="!", intents=intents)
 
 BEAUTIFIER_FILE = "beautified.luau.txt"
-LUNE_PATH = "./lune"  # change if needed
+LUNE_PATH = "./lune.txt"  # change if needed
 
 @bot.event
 async def on_ready():
